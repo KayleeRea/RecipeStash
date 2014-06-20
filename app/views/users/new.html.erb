@@ -1,0 +1,12 @@
+<h1>Register Below Please..</h1>
+<%= form_for @user, :url => {:action => 'create'} do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions"><%= f.submit "Sign Up" %></div>
+<% end %>

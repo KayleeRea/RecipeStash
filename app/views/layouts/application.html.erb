@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RecipeStash</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<header>
+  <h1><%= link_to 'RecipeStash', root_path %></h1>
+  <% if session[:user_id] == nil %>
+    <%= link_to 'Register', new_user_path %>
+    <%= link_to 'Login', new_session_path %>
+<% else current_user.present? %>
+    <%= link_to 'Logout', "/sessions/#{current_user.id}", method: :delete %>
+  <% end %>
+</header>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

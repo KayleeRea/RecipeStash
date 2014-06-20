@@ -1,0 +1,6 @@
+<div>
+  <% if current_user.present? %>
+    <%= flash[:notice] %>
+    <%= flash[:success] %>
+<% end %>
+</div>

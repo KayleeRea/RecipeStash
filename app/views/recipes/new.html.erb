@@ -1,0 +1,7 @@
+<h1>Add Your Ingredients Below</h1>
+
+<%= form_tag :recipe, controller: "recipes", action: "create", method: "get" %>
+  <%= text_field_tag :ingredient1 %>
+  <%= text_field_tag :ingredient2 %>
+  <%= text_field_tag :ingredient3 %>
+  <%= submit_tag('Submit') %>

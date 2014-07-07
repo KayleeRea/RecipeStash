@@ -1,0 +1,9 @@
+<h1>Here are your search results for </h1>
+<% @recipes.each do |recipe| %>
+<%= recipe.ingredient1 %>,
+<%= recipe.ingredient2 %>,
+<%= recipe.ingredient3 %>,
+<%= recipe.ingredient4 %>,
+<%= recipe.ingredient5 %>
+
+<% end %>

@@ -1,0 +1,9 @@
+<% recipe_preview.results.each do |recipe| %>
+  <li><%= recipe.name %><br><%= image_tag recipe.image_url %>
+    <ul>
+      <% recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>

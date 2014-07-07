@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(email: params[:user][:email], password: params[:user][:password])
+    @user = User.new(email: params[:user][:email], password: params[:user][:password])
     if @user.save
       redirect_to new_session_path, notice: "Registered! Please login now"
     else

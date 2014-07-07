@@ -1,0 +1,8 @@
+<h1>Fill In Your Ingredients Below</h1>
+
+<%= form_tag '/recipes_preview', method: :post do %>
+<%= text_field_tag 'ingredients[:one]' %>
+<%= text_field_tag 'ingredients[:two]' %>
+<%= text_field_tag 'ingredients[:three]' %>
+<%= submit_tag('Submit') %>
+<% end %>

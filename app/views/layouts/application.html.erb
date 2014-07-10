@@ -4,18 +4,14 @@
   <title>RecipeStash</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=latin,latin-ext">
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
-<header>
-  <h1><%= link_to 'RecipeStash', root_path %></h1>
-  <% if !current_user %>
-    <%= link_to 'Register', new_user_path %>
-    <%= link_to 'Login', new_session_path %>
-<% else %>
-    <%= link_to 'Logout', "/sessions/#{current_user.id}", method: :delete %>
-    <%= link_to 'Search by Ingredients', new_recipes_preview_path %>
+
+<% if current_user %>
+    <%= link_to 'Logout', "/sessions/#{current_user.id}", method: :delete, class: "action-button shadow animate red logout"  %>
   <% end %>
-</header>
 <body>
 
 <%= yield %>

@@ -1,12 +1,4 @@
 <ul>
-  <% recipe_preview.results.each do |recipe| %>
-    <li><%= recipe.name %><br><%= image_tag recipe.image_url %>
-      <ul>
-        <% recipe.ingredients.each do |ingredient| %>
-          <li><%= ingredient %></li>
-        <% end %>
-      </ul>
-    </li>
-
-  <% end %>
+  <div class="opaque"></div>
+  <%= render partial:'recipes_preview/recipe_preview', collection: recipe_preview.results, as: :recipe %>
 </ul>

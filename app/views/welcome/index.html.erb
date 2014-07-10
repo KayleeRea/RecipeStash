@@ -1,6 +1,20 @@
-<div>
-  <% if current_user.present? %>
-    <%= flash[:notice] %>
-    <%= flash[:success] %>
-<% end %>
-</div>
+  <div class="welcome-wrapper">
+    <div class="welcome">
+      <strong class="flash"><% if current_user.present? %>
+        <%= flash[:success] %></strong>
+      <% end %>
+      <div class="message">
+        <div class="right"><strong>STARING INTO THIS WHEN TRYING TO PLAN DINNER</strong></div>
+        <h1>CAN BE DAUNTING</h1>
+        <div class="right"><strong>LUCKILY <span> RECIPESTASH </span>SPITS OUT RECIPES FOR INGREDIENTS THAT YOU DO HAVE</strong></div>
+        <% if current_user %>
+          </br>
+          <%= link_to 'Search For Recipes Now', new_recipes_preview_path, class: "action-button shadow animate red" %>
+          <% else %>
+          </br>
+          <%= link_to 'Register', new_user_path, class: "action-button shadow animate red" %>
+          <%= link_to 'Login', new_session_path, class: "action-button shadow animate red"%>
+      <% end %>
+      </div>
+    </div>
+  </div>

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       @user = User.new
-      flash[:login_failure] = 'Incorrect Email or Password'
+      flash[:error] = 'Incorrect Email or Password'
       render new_session_path
     end
   end

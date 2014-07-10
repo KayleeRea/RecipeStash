@@ -1,14 +1,21 @@
-<%= flash[:notice] %>
 
+<div class="opaque">
+  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+  <%= flash[:notice] %>
+  <div class="forms">
 <h1>Login</h1>
-<%= form_for @user, :url => {:action => 'create'} do |f| %>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <table>
+    <%= form_for @user, :url => {:action => 'create'} do |f| %>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :password %></td>
+        <td><%= f.password_field :password %></td>
+      </tr>
+      <tr><td><%= f.submit "Submit" %></td></tr>
+    <% end %>
+  </table>
   </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions"><%= f.submit "Submit" %></div>
-<% end %>
+ </div>

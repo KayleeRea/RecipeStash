@@ -1,8 +1,14 @@
-<h1>Fill In Your Ingredients Below</h1>
+<div class="opaque">
+  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+  <div class="forms">
+    <h1>Fill In Your Ingredients Below</h1>
 
-<%= form_tag '/recipes_preview', method: :post do %>
-<%= text_field_tag 'ingredients[:one]' %>
-<%= text_field_tag 'ingredients[:two]' %>
-<%= text_field_tag 'ingredients[:three]' %>
-<%= submit_tag('Submit') %>
-<% end %>
+    <%= form_tag '/recipes_preview', method: :post do %>
+      <%= text_field_tag 'ingredients[]' %>
+      <%= text_field_tag 'ingredients[]' %>
+      <%= text_field_tag 'ingredients[]' %>
+
+      <%= submit_tag('Submit') %>
+    <% end %>
+  </div>
+</div>

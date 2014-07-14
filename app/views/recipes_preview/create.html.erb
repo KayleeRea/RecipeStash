@@ -1,4 +1,7 @@
 <div class="opaque">
-  <h1>Based on Your Search..</h1>
-  <%= render partial: 'recipes_preview/recipe_preview', collection: recipe_preview.results, as: :recipe %>
+  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+  <div class="forms">
+    <h1>Based on Your Search..</h1>
+    <%= render partial: 'recipes_preview/recipe_preview', collection: recipe_preview.results, as: :recipe %>
+  </div>
 </div>

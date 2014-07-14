@@ -16,12 +16,7 @@ feature 'User can do a search and will recieve a list of preview recipes' do
   end
 
   scenario 'a user can fill in fields to make a search on the Yummly API' do
-    pending
     click_on 'Search For Recipes Now'
-    fill_in 'ingredients[]', with: 'tomatoes'
-    fill_in 'ingredients[]', with: 'chicken'
-    fill_in 'ingredients[]', with: 'garlic'
-    click_on 'Submit'
-    expect(page).to have_content('Based on Your Search..')
+    expect(page).to have_content 'Fill In Your Ingredients Below'
   end
 end

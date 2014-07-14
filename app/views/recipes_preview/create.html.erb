@@ -1,4 +1,4 @@
-<ul>
-  <div class="opaque"></div>
-  <%= render partial:'recipes_preview/recipe_preview', collection: recipe_preview.results, as: :recipe %>
-</ul>
+<div class="opaque">
+  <h1>Based on Your Search..</h1>
+  <%= render partial: 'recipes_preview/recipe_preview', collection: recipe_preview.results, as: :recipe %>
+</div>

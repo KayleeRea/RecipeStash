@@ -16,7 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'faraday', '~> 0.9.0'
 gem 'dotenv-rails', '~> 0.11.1'
-gem 'rails_12factor', '~> 0.0.2'
+gem 'rails_12factor', '~> 0.0.2', group: :production
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'

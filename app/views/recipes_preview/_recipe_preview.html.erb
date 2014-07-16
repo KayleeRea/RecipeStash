@@ -1,6 +1,6 @@
 <ul>
   <li><%= recipe.name %>
-    <br><%= image_tag recipe.image_url %>
+    <br><%= image_tag recipe.image_url %><%= link_to "See Full Recipe", root_path, class: "action-button shadow animate red" %>
     <ul>
       <% recipe.ingredients.each do |ingredient| %>
         <li><%= ingredient %></li>
@@ -8,3 +8,4 @@
     </ul>
   </li>
 </ul>
+

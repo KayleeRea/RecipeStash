@@ -150,10 +150,17 @@ span {
     display: inline-block;
     padding-left: 5em;
     width: 40%;
+    padding-top: 2em;
 }
 
 .flash {
     text-transform: uppercase;
+}
+
+.previews {
+    display: inline-block;
+    padding-left: 5em;
+    width: 50%;
 }
 
 

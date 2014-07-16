@@ -4,9 +4,9 @@
     <h1>Fill In Your Ingredients Below</h1>
 
     <%= form_tag '/recipes_preview', method: :post do %>
-      <%= text_field_tag 'ingredients[]' %>
-      <%= text_field_tag 'ingredients[]' %>
-      <%= text_field_tag 'ingredients[]' %>
+      <%= text_field_tag 'ingredients[]', nil, placeholder: "First Ingredient" %>
+      <%= text_field_tag 'ingredients[]', nil, placeholder: "Second Ingredient" %>
+      <%= text_field_tag 'ingredients[]', nil, placeholder: "Third Ingredient" %>
 
       <%= submit_tag('Submit') %>
     <% end %>

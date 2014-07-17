@@ -1,21 +1,28 @@
-
-
 <div class="opaque">
-  <div class="forms">
-  <h1>Register Below Please..</h1>
-  <%= form_for @user, :url => {:action => 'create'} do |f| %>
-    <table>
-    <tr>
-      <td><%= f.label :email %></td>
-      <td><%= f.text_field :email %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :password %></td>
-        <td><%= f.password_field :password %></td>
-      </tr>
-      <tr><td class=""><%= f.submit "Sign Up" %></td></tr>
+  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+  <% if @user.errors.any? %>
+    <div class="error">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+  <% end %>
+  </div>
+  <div class="forms_with_errors">
+    <h1>Register Below Please..</h1>
+    <%= form_for @user, :url => {:action => 'create'} do |f| %>
+      <table>
+        <tr>
+          <td><%= f.label :email %></td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :password %></td>
+          <td><%= f.password_field :password %></td>
+        </tr>
+        <tr>
+          <td class=""><%= f.submit "Sign Up" %></td>
+        </tr>
       </table>
       </div>
-    <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
-  <% end %>
-</div>
+    <% end %>
+    </div>

@@ -147,7 +147,6 @@ span {
 }
 
 .forms {
-    display: inline-block;
     padding-left: 5em;
     width: 40%;
     padding-top: 2em;
@@ -155,6 +154,7 @@ span {
 
 .flash {
     text-transform: uppercase;
+    margin-left: 5em;
 }
 
 .previews {
@@ -163,5 +163,12 @@ span {
     width: 50%;
 }
 
+.error {
+    color: #d90000;
+    margin-left: 5em;
+}
 
-
+.forms_with_errors {
+    margin-left: 5em;
+    width: 40%;
+}

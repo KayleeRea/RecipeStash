@@ -6,6 +6,12 @@ class RecipesPreviewController < ApplicationController
   end
 
   def create
+    if recipe_preview.results.empty?
+      flash[:no_results] = "Please check your spelling or choose different ingredients"
+      render :new
+    else
+      render :create
+    end
   end
 
   private

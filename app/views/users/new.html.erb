@@ -3,10 +3,10 @@
   <% if @user.errors.any? %>
     <div class="error">
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <%= msg %>
       <% end %>
+    </div>
   <% end %>
-  </div>
   <div class="forms_with_errors">
     <h1>Register Below Please..</h1>
     <%= form_for @user, :url => {:action => 'create'} do |f| %>
@@ -23,6 +23,8 @@
           <td class=""><%= f.submit "Sign Up" %></td>
         </tr>
       </table>
-      </div>
     <% end %>
-    </div>
+  </div>
+</div>
+
+

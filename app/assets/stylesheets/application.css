@@ -166,6 +166,7 @@ span {
 .error {
     color: #d90000;
     margin-left: 5em;
+    width: 40%
 }
 
 .forms_with_errors {

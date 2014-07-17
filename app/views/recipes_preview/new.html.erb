@@ -1,6 +1,9 @@
 <div class="opaque">
+  <div class="error">
+  <%= flash[:no_results] %>
+  </div>
   <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
-  <div class="forms">
+  <div class="forms_with_errors">
     <h1>Fill In Your Ingredients Below</h1>
 
     <%= form_tag '/recipes_preview', method: :post do %>

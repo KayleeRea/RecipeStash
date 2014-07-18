@@ -4,10 +4,10 @@ describe FullRecipe do
  let(:valid_response) {
    {
      "attribution"=>{
-     "html"=> "<a href='http=>//www.yummly.com/recipe/French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'>French Onion Soup recipe</a> information powered by <img alt='Yummly' src='http=>//static.yummly.com/api-logo.png'/>",
-     "url"=> "http=>//www.yummly.com/recipe/French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364",
+     "html"=> "<a href='http://www.yummly.com/recipe/French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'>French Onion Soup recipe</a> information powered by <img alt='Yummly' src='http=>//static.yummly.com/api-logo.png'/>",
+     "url"=> "http://www.yummly.com/recipe/French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364",
      "text"=> "French Onion Soup recipes=> information powered by Yummly",
-     "logo"=> "http=>//static.yummly.com/api-logo.png"
+     "logo"=> "http://static.yummly.com/api-logo.png"
  },
    "ingredientLines"=> [
    "1 stick Butter",
@@ -31,11 +31,11 @@ describe FullRecipe do
    "images"=> [
    {
      "imageUrlsBySize"=> {
-   "90"=> "http=>//lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s90-c",
-   "360"=> "http=>//lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s360-c"
+   "90"=> "http://lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s90-c",
+   "360"=> "http://lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s360-c"
  },
-   "hostedLargeUrl"=> "http=>//lh6.ggpht.com/Sn2qCFY3fG8cI71t9BdZ-Jyb9RyPh_0Dg79ii9iRNHhd97yQy5MYg0e9sun3HxY9inRax15XWkBSrQ3RCQGq0A=s360",
-   "hostedSmallUrl"=> "http=>//lh6.ggpht.com/Sn2qCFY3fG8cI71t9BdZ-Jyb9RyPh_0Dg79ii9iRNHhd97yQy5MYg0e9sun3HxY9inRax15XWkBSrQ3RCQGq0A=s90"
+   "hostedLargeUrl"=> "http://lh6.ggpht.com/Sn2qCFY3fG8cI71t9BdZ-Jyb9RyPh_0Dg79ii9iRNHhd97yQy5MYg0e9sun3HxY9inRax15XWkBSrQ3RCQGq0A=s360",
+   "hostedSmallUrl"=> "http://lh6.ggpht.com/Sn2qCFY3fG8cI71t9BdZ-Jyb9RyPh_0Dg79ii9iRNHhd97yQy5MYg0e9sun3HxY9inRax15XWkBSrQ3RCQGq0A=s90"
  }
  ],
    "name"=> "French Onion Soup",
@@ -54,8 +54,8 @@ describe FullRecipe do
  "rating"=> 5,
    "numberOfServings"=> 6,
    "source"=> {
-   "sourceRecipeUrl"=> "http=>//thepioneerwoman.com/cooking/2009/02/french-onion-soup/",
-   "sourceSiteUrl"=> "http=>//thepioneerwoman.com",
+   "sourceRecipeUrl"=> "http://thepioneerwoman.com/cooking/2009/02/french-onion-soup/",
+   "sourceSiteUrl"=> "http://thepioneerwoman.com",
    "sourceDisplayName"=> "The Pioneer Woman"
  },
    "id"=> "French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364"
@@ -71,10 +71,11 @@ describe FullRecipe do
   it 'requests the specifics of a recipe from the Yummly API' do
     recipe_object = subject.recipe_content
     recipe_object.name.should eq 'French Onion Soup'
-    recipe_object.large_photo.should eq 'http=>//lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s360-c'
+    recipe_object.large_photo.should eq 'http://lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s360-c'
+    recipe_object.small_photo.should eq 'http://lh3.ggpht.com/7t-vr_ARBxI2cXh852jSCWFPVClbnkMg5GBzOYO-dDfzxndJ6K_D4Kd_bgHxCx5RtfTRHQruO2ohqSsL_zOk=s90-c'
     recipe_object.rating.should eq 5
     recipe_object.yielding.should eq '6'
-    recipe_object.recipe_url.should eq 'http=>//thepioneerwoman.com/cooking/2009/02/french-onion-soup/'
+    recipe_object.recipe_url.should eq 'http://thepioneerwoman.com/cooking/2009/02/french-onion-soup/'
     recipe_object.ingredient_quantities.should eq [
                                              "1 stick Butter",
                                              "4 whole Large (or 6 Medium) Yellow Onions, Halved Root To Tip, And Sliced Thin",

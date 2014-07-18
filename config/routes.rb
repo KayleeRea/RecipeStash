@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :recipes_preview
   resources :full_recipe
+  resources :stashes, only: [:index, :show, :create, :destroy]
 end

@@ -1,8 +1,28 @@
 <div class="opaque">
   <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
-  <div class="stash_it_button"><%= link_to "Stash It", root_path, class: "action-button shadow animate red" %></div>
+  <div class="stash_it_button" style="display:none"><%= link_to "Stash It",
+                                           stashes_path(stash: {name: full_recipe.name, yummly_id: params[:id], photo_url: full_recipe.small_photo}, format: :json),
+                                           class: "action-button shadow animate red", method: :post, remote: true  %></div>
+  <div class="trash_it_button" style="display:none"><%= link_to "Trash It",
+                                           stash_path(params[:id], format: :json),
+                                           class: "action-button shadow animate red", method: :delete, remote: true, confirm: "Are you sure?"  %></div>
 
   <div class="forms_with_errors">
-    <%= render partial: 'full_recipe/full_recipe', object: full_recipe.recipe_content, as: :recipe %>
+    <%= render partial: 'full_recipe/full_recipe', object: full_recipe, as: :recipe %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(
+    function() {
+      $.getJSON('<%= stash_path(params[:id], format: :json) %>', function(data) {
+        console.log(data);
+        if (data.stash) {
+          $('.trash_it_button').show();
+        } else {
+          $('.stash_it_button').show();
+        }
+      });
+    }
+  )
+</script>

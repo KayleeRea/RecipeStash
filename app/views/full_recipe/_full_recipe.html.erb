@@ -1,12 +1,10 @@
-<div class="forms">
-  <h1><%= recipe.name %></h1>
-</div>
+<h1><%= recipe.name %></h1>
+<%= image_tag recipe.large_photo, class: "large_photo" %>
+<h5>Yields: <%= recipe.yielding %> Rating: <%= recipe.rating %> </h5>
 <ul>
-  <%= image_tag recipe.large_photo %>
-  <%= link_to "Stash It", root_path, class: "action-button shadow animate red" %>
-  <li>Yields: <%= recipe.yielding %> Rating: <%= recipe.rating %></li>
+  <h4>Ingredients</h4>
   <% recipe.ingredient_quantities.each do |ingredient| %>
     <li><%= ingredient %></li>
   <% end %>
-  <li><%= recipe.recipe_url %></li>
 </ul>
+<%= link_to "Visit the source of this recipe", recipe.recipe_url, class: "action-button shadow animate orange" %>

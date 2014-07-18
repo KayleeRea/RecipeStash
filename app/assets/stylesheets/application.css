@@ -113,7 +113,6 @@ span {
     font-size: 25px;
     color: white;
     text-decoration: none;
-    float: right;
 }
 
 .red
@@ -121,6 +120,7 @@ span {
     background-color: red;
     border-bottom: 5px solid darkred;
     text-shadow: 0px -2px #700a08;
+    float: right;
 }
 
 .opaque {
@@ -172,4 +172,24 @@ span {
 .forms_with_errors {
     margin-left: 5em;
     width: 40%;
+}
+
+.stash_it_button {
+    float: right;
+    display: inline-block;
+    height: 10em;
+    width: 20em;
+    padding-right: 15em;
+    padding-top: 2em;
+}
+
+.large_photo {
+    padding-left: 3em;
+}
+
+.orange {
+    background-color: orangered;
+    border-bottom: 5px solid #a70f16 ;
+    text-shadow: 0px -2px #700a08;
+    margin-left: 1.5em;
 }

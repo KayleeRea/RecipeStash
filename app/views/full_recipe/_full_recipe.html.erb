@@ -1,6 +1,6 @@
 <h1><%= recipe.name %></h1>
 <%= image_tag recipe.large_photo, class: "large_photo" %>
-<h5>Yields: <%= recipe.yielding %> Rating: <%= recipe.rating %> </h5>
+<h5>Yields: <%= recipe.yielding %> <br>Rating: <%= recipe.rating %> </h5>
 <ul>
   <h4>Ingredients</h4>
   <% recipe.ingredient_quantities.each do |ingredient| %>

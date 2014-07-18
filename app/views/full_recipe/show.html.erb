@@ -1,11 +1,9 @@
 <div class="opaque">
   <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
-  <div class="stash_it_button" style="display:none"><%= link_to "Stash It",
-                                           stashes_path(stash: {name: full_recipe.name, yummly_id: params[:id], photo_url: full_recipe.small_photo}, format: :json),
-                                           class: "action-button shadow animate red", method: :post, remote: true  %></div>
-  <div class="trash_it_button" style="display:none"><%= link_to "Trash It",
-                                           stash_path(params[:id], format: :json),
-                                           class: "action-button shadow animate red", method: :delete, remote: true, confirm: "Are you sure?"  %></div>
+  <div class="stash_it_button" style="display:none"><%= link_to "Stash It", '#', class: "action-button shadow animate red",
+                                                                 data: {name: full_recipe.name, yummly_id: params[:id], photo_url: full_recipe.small_photo} %>
+  </div>
+  <div class="trash_it_button" style="display:none"><%= link_to "Trash It", '#', class: "action-button shadow animate orange-trash" %></div>
 
   <div class="forms_with_errors">
     <%= render partial: 'full_recipe/full_recipe', object: full_recipe, as: :recipe %>
@@ -16,12 +14,42 @@
   $(
     function() {
       $.getJSON('<%= stash_path(params[:id], format: :json) %>', function(data) {
-        console.log(data);
         if (data.stash) {
           $('.trash_it_button').show();
         } else {
           $('.stash_it_button').show();
         }
+      });
+
+      $('.trash_it_button a').on('click', function(e) {
+        e.preventDefault();
+        $.ajax('<%= stash_path(params[:id], format: :json) %>', {
+          dataType: 'json',
+          type: 'DELETE',
+          success: function(data) {
+            $('.trash_it_button').hide();
+            $('.stash_it_button').show();
+          }
+        });
+      });
+      $('.stash_it_button a').on('click', function(e) {
+        e.preventDefault();
+        var params = $(this).data();
+        $.ajax('<%= stashes_path(format: :json) %>', {
+          dataType: 'json',
+          data: {
+            stash: {
+              name: params.name,
+              yummly_id: params.yummlyId,
+              photo_url: params.photoUrl
+            }
+          },
+          type: 'POST',
+          success: function(data) {
+            $('.stash_it_button').hide();
+            $('.trash_it_button').show();
+          }
+        });
       });
     }
   )

@@ -4,9 +4,11 @@
         <%= flash[:success] %></strong>
       <% end %>
       <div class="message">
-        <div class="right"><strong>STARING INTO THIS WHEN TRYING TO PLAN DINNER</strong></div>
+        <div class="right"><strong>STARING INTO THIS WHEN TRYING TO PLAN A MEAL</strong></div>
         <h1>CAN BE DAUNTING</h1>
-        <div class="right"><strong>LUCKILY <span> RECIPESTASH </span>SPITS OUT RECIPES FOR INGREDIENTS THAT YOU DO HAVE</strong></div>
+        <div class="right"><strong>LUCKILY <span> RECIPESTASH </span>GIVES YOU THE ABILITY TO SEARCH FOR RECIPES BASED
+          ON INGREDIENTS THAT YOU ALREADY HAVE IN YOUR FRIDGE OR PANTRY
+          </strong></div>
         <% if current_user %>
           </br>
           <%= link_to 'Search For Recipes Now', new_recipes_preview_path, class: "action-button shadow animate red" %>

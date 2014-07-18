@@ -1,0 +1,8 @@
+<div class="opaque">
+  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+
+
+  <div class="previews">
+    <%= render partial: 'full_recipe/full_recipe', object: full_recipe.recipe_content, as: :recipe %>
+  </div>
+</div>

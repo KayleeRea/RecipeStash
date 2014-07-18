@@ -54,7 +54,7 @@ describe RecipePreview do
     result.size.should eq 1
     qwtswp = result.first
     qwtswp.name.should eq 'Quick Weeknight Tomato Sauce with Pasta'
-    qwtswp.id.should eq 'Quick-weeknight-tomato-sauce-with-pasta-308266'
+    qwtswp.recipe_id.should eq 'Quick-weeknight-tomato-sauce-with-pasta-308266'
     qwtswp.image_url.should eq 'http://lh3.ggpht.com/SfiFphCa10eclwH1TY432WTmfQmDdyxV7kbHBoHjxs17XZidnkJbrLXF43QLtUFqbO7TgbLquL61hLl7vFoKpw=s90-c'
     qwtswp.ingredients.should eq [
                                      "chicken sausage",

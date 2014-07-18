@@ -20,7 +20,7 @@ class RecipePreview
       image_url = recipe_hash.fetch("imageUrlsBySize", {})["90"]
       ingredients = recipe_hash["ingredients"]
       output << Recipe.new(:name => recipe_name,
-                           :id => id, :image_url => image_url,
+                           :recipe_id => id, :image_url => image_url,
                            :ingredients => ingredients)
 
 

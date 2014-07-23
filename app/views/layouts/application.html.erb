@@ -7,11 +7,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=latin,latin-ext">
   <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 
+</div>
 <% if current_user %>
     <%= link_to 'Logout', "/sessions/#{current_user.id}", method: :delete, class: "action-button shadow animate red logout"  %>
+  <div class="stash_link">
+    <% if current_user.stashes %>
+      <%= link_to "See my Stash", stashes_path, class: "action-button shadow animate green" %>
+    <% end %>
+    </div>
   <% end %>
 <body>
 

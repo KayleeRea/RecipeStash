@@ -9,10 +9,10 @@ html {
 
 body {
     height: 80%;
-    background: url(http://www.splendidtable.org/sites/default/files/AmusementPark.jpg);
+    background-image: url(http://www.splendidtable.org/sites/default/files/AmusementPark.jpg);
     background-size: 80%;
     background-repeat: no-repeat;
-    background-attachement: fixed;
+    background-attachment: fixed;
     font-family: Roboto, sans-serif;
     font-size: 16px;
     background-position: center;
@@ -35,7 +35,6 @@ body {
     color: #777;
     text-decoration: none;
 }
-
 
 .nav a.active {
     color: #333;
@@ -82,12 +81,11 @@ body {
 .logo {
     width: 40em;
     margin: auto;
-    float: right;
+    float: left;
     display: inline-block;
     border: none;
     height: 10em;
     width: 20em;
-    padding-right: 10em;
 
 }
 
@@ -96,14 +94,12 @@ span {
     font-size: 1.5em;
 }
 
-.animate
-{
+.animate {
     transition: all 0.1s;
     -webkit-transition: all 0.1s;
 }
 
-.action-button
-{
+.action-button {
     position: relative;
     padding: 10px 40px;
     margin: 0px 10px 10px 0px;
@@ -115,8 +111,7 @@ span {
     text-decoration: none;
 }
 
-.red
-{
+.red {
     background-color: red;
     border-bottom: 5px solid darkred;
     text-shadow: 0px -2px #700a08;
@@ -147,9 +142,10 @@ span {
 }
 
 .forms {
-    padding-left: 5em;
+    padding-right: 8em;
     width: 40%;
     padding-top: 2em;
+    float: right;
 }
 
 .flash {
@@ -158,9 +154,9 @@ span {
 }
 
 .previews {
-    display: inline-block;
     padding-left: 5em;
-    width: 50%;
+    width: 70%;
+    float: left;
 }
 
 .error {
@@ -170,8 +166,9 @@ span {
 }
 
 .forms_with_errors {
-    margin-left: 5em;
+    margin-right: 10em;
     width: 40%;
+    float: right;
 }
 
 .stash_it_button {
@@ -181,6 +178,7 @@ span {
     width: 20em;
     padding-right: 15em;
     padding-top: 2em;
+    margin: auto;
 }
 
 .large_photo {
@@ -189,7 +187,7 @@ span {
 
 .orange {
     background-color: orangered;
-    border-bottom: 5px solid #a70f16 ;
+    border-bottom: 5px solid #a70f16;
     text-shadow: 0px -2px #700a08;
     margin-left: 1.5em;
 }
@@ -209,4 +207,92 @@ span {
     border-bottom: 5px solid darkred;
     text-shadow: 0px -2px #700a08;
     float: right;
+}
+
+.green {
+    background-color: limegreen;
+    border-bottom: 5px solid green;
+    text-shadow: darkgreen;
+    float: right;
+    margin-left: 1em;
+}
+
+#buttons {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.btn2 {
+
+    height: 3em;
+    border: 3px solid limegreen;
+    background-color: rgba(241, 239, 236, 0.67);
+    font-size: 17px;
+    color: limegreen;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    outline: none;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.btn2:hover {
+    background-color: limegreen;
+    border: none;
+    color: white;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    transform: translateY(10%);
+}
+
+h3 {
+    margin-bottom: 0;
+    margin-left: .5em;
+}
+
+.gray-opaque {
+    background-color: rgba(189, 189, 189, 0.61);
+    width: 50%;
+    margin-left: 14em;
+    text-align: center;
+    border-radius: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.full_recipe_show {
+    float: left;
+    width: 70%;
+    margin-left: 7em;
+}
+
+a.search-link {
+    margin-left: 2.5em;
+}
+
+h2 {
+    display: inline-block;
+    margin-right: .5em;
+}
+
+.remove {
+    color: red;
+    text-decoration: none;
+}
+
+.remove:hover {
+    border-bottom: 1px solid red;
 }

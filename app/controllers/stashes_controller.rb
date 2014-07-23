@@ -17,13 +17,13 @@ class StashesController < ApplicationController
   end
 
   def destroy
-    @stash = current_user.stashes.find_by_yummly_id(params[:id])
+    @stash = current_user.stashes.find_by_id(params[:id])
     @stash.destroy
     respond_with @stash
   end
 
   private
   def stash_params
-    params.require(:stash).permit(:name, :yummly_id, :photo_url)
+    params.require(:stash).permit(:name, :yummly_id, :photo_url, :recipe_url)
   end
 end

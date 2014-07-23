@@ -1,11 +1,13 @@
 <div class="opaque">
   <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+
   <div class="stash_it_button" style="display:none"><%= link_to "Stash It", '#', class: "action-button shadow animate red",
-                                                                 data: {name: full_recipe.name, yummly_id: params[:id], photo_url: full_recipe.small_photo} %>
+                                                                 data: {name: full_recipe.name, yummly_id: params[:id],
+                                                                        photo_url: full_recipe.small_photo, recipe_url: full_recipe.recipe_url} %>
   </div>
   <div class="trash_it_button" style="display:none"><%= link_to "Trash It", '#', class: "action-button shadow animate orange-trash" %></div>
 
-  <div class="forms_with_errors">
+  <div class="full_recipe_show">
     <%= render partial: 'full_recipe/full_recipe', object: full_recipe, as: :recipe %>
   </div>
 </div>
@@ -41,7 +43,8 @@
             stash: {
               name: params.name,
               yummly_id: params.yummlyId,
-              photo_url: params.photoUrl
+              photo_url: params.photoUrl,
+              recipe_url: params.recipeUrl
             }
           },
           type: 'POST',

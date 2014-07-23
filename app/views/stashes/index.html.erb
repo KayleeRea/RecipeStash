@@ -1,0 +1,30 @@
+<div class="opaque">
+<div class="search-link"><%= link_to "New Search", new_recipes_preview_path, class: "search-link" %></div>
+  <div class="gray-opaque">
+    <h1><span>The Stash</span></h1>
+    <% @stashes.each do |recipe| %>
+      <div class="recipe_bucket">
+      <h3><%= recipe.name %></h3>
+      <div class="buttons1"><%= button_to "Visit this recipe", recipe.recipe_url, class: "btn2" %></div>
+      <div><%= image_tag recipe.photo_url %></div>
+      <strong><%= link_to "Remove", stash_path(recipe), class: "remove" %></strong>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(".remove").on('click', function(event){
+    event.preventDefault()
+    var link=event.target
+    $.ajax({
+      url: $(link).attr('href') + '.json',
+      type: 'DELETE',
+      contentType: "application/json",
+      success: function(result) {
+        $(link).parents('.recipe_bucket').fadeOut()
+      }
+    });
+    console.log('hi')
+  })
+</script>

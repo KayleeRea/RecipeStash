@@ -1,5 +1,5 @@
 <div class="opaque">
-  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), root_path) %>
+  <%= link_to(image_tag("RecipeStashLogo.png", class: "logo"), new_recipes_preview_path) %>
 
   <div class="stash_it_button" style="display:none"><%= link_to "Stash It", '#', class: "action-button shadow animate red",
                                                                  data: {name: full_recipe.name, yummly_id: params[:id],
@@ -23,8 +23,8 @@
         }
       });
 
-      $('.trash_it_button a').on('click', function(e) {
-        e.preventDefault();
+      $('.trash_it_button a').on('click', function(event) {
+        event.preventDefault();
         $.ajax('<%= stash_path(params[:id], format: :json) %>', {
           dataType: 'json',
           type: 'DELETE',
@@ -34,8 +34,8 @@
           }
         });
       });
-      $('.stash_it_button a').on('click', function(e) {
-        e.preventDefault();
+      $('.stash_it_button a').on('click', function(event) {
+        event.preventDefault();
         var params = $(this).data();
         $.ajax('<%= stashes_path(format: :json) %>', {
           dataType: 'json',

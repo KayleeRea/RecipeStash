@@ -1,7 +1,11 @@
 <div class="opaque">
-<div class="search-link"><%= link_to "New Search", new_recipes_preview_path, class: "search-link" %></div>
+<%= link_to "New Search", new_recipes_preview_path, class: "search-link" %>
   <div class="gray-opaque">
-    <h1><span>The Stash</span></h1>
+    <div class="wrap">
+      <header>
+        <h1><%= link_to "The Stash", root_path, class: "stash"%></h1>
+      </header>
+      </div>
     <% @stashes.each do |recipe| %>
       <div class="recipe_bucket">
       <h3><%= recipe.name %></h3>

@@ -161,8 +161,9 @@ span {
 
 .error {
     color: #d90000;
-    margin-left: 5em;
-    width: 40%
+    float: right;
+    width: 40%;
+    margin-right: 10em
 }
 
 .forms_with_errors {
@@ -279,9 +280,18 @@ h3 {
     margin-left: 7em;
 }
 
-a.search-link {
-    margin-left: 2.5em;
+.search-link {
+    margin-left: 3em;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #1a47b1;
+    padding: .4em;
+    border: 3px solid #1a47b1;
 }
+.search-link:hover {
+    border: none;
+}
+
 
 h2 {
     display: inline-block;
@@ -295,4 +305,15 @@ h2 {
 
 .remove:hover {
     border-bottom: 1px solid red;
+}
+
+.stash {
+    text-decoration: none;
+    color: black;
+    font-size: 6rem;
+    font-family: 'Architects Daughter', cursive;
+    text-shadow: 0px -2px grey;
+    padding: .2em;
+    border-radius: 1em;
+    background-color: red;
 }

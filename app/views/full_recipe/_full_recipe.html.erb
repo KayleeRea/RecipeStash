@@ -1,5 +1,10 @@
 <h1><%= recipe.name %></h1>
 <%= image_tag recipe.large_photo, class: "large_photo" %>
+<div class="stash_it_button"><%= link_to "Stash It", stashes_path(format: :json), class: "action-button shadow animate red",
+                                         data: {name: full_recipe.name, yummly_id: params[:id],
+                                                photo_url: full_recipe.small_photo, recipe_url: full_recipe.recipe_url} %>
+</div>
+<div class="trash_it_button"><%= link_to "Trash It", stash_path(params[:id], format: :json), class: "action-button shadow animate orange-trash" %></div>
 <% if recipe.yielding.nil? %>
 <% else %>
   <h5>Yields: <%= recipe.yielding %> <br>Rating: <%= recipe.rating %> </h5>
@@ -11,3 +16,10 @@
   <% end %>
 </ul>
 <%= link_to "Visit the source of this recipe", recipe.recipe_url, class: "action-button shadow animate orange", target: :_blank %>
+
+
+<script>
+  $(function () {
+    setupStash('<%= stash_path(params[:id], format: :json) %>');
+  });
+</script>

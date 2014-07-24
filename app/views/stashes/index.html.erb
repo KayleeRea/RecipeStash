@@ -10,7 +10,7 @@
       <div class="recipe_bucket">
         <h3><%= stash.name %></h3>
 
-        <div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, class: "btn2" %></div>
+        <div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, class: "btn2", target: :_blank %></div>
         <div><%= image_tag stash.photo_url %></div>
         <strong><%= link_to "Remove", stash_path(stash.yummly_id), class: "remove" %></strong>
       </div>
@@ -19,19 +19,5 @@
 </div>
 
 <script>
-  $(".remove").on('click', function (event) {
-    event.preventDefault();
-    var link = event.target;
-    $.ajax({
-      url: $(link).attr('href'),
-      type: 'DELETE',
-      dataType: 'json',
-      contentType: "application/json",
-      success: function (result) {
-        $(link).parents('.recipe_bucket').fadeOut('fast', function(){
-          $(link).parents('.recipe_bucket').remove()
-        })
-      }
-    });
-  })
+  $(removeStash)
 </script>

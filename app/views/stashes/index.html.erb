@@ -1,34 +1,37 @@
 <div class="opaque">
-<%= link_to "New Search", new_recipes_preview_path, class: "search-link" %>
+  <%= link_to "New Search", new_recipes_preview_path, class: "search-link" %>
   <div class="gray-opaque">
     <div class="wrap">
       <header>
-        <h1><%= link_to "The Stash", root_path, class: "stash"%></h1>
+        <h1><%= link_to "The Stash", root_path, class: "stash" %></h1>
       </header>
-      </div>
-    <% @stashes.each do |recipe| %>
+    </div>
+    <% @stashes.each do |stash| %>
       <div class="recipe_bucket">
-      <h3><%= recipe.name %></h3>
-      <div class="buttons1"><%= button_to "Visit this recipe", recipe.recipe_url, class: "btn2" %></div>
-      <div><%= image_tag recipe.photo_url %></div>
-      <strong><%= link_to "Remove", stash_path(recipe), class: "remove" %></strong>
+        <h3><%= stash.name %></h3>
+
+        <div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, class: "btn2" %></div>
+        <div><%= image_tag stash.photo_url %></div>
+        <strong><%= link_to "Remove", stash_path(stash.yummly_id), class: "remove" %></strong>
       </div>
     <% end %>
   </div>
 </div>
 
 <script>
-  $(".remove").on('click', function(event){
-    event.preventDefault()
-    var link=event.target
+  $(".remove").on('click', function (event) {
+    event.preventDefault();
+    var link = event.target;
     $.ajax({
-      url: $(link).attr('href') + '.json',
+      url: $(link).attr('href'),
       type: 'DELETE',
+      dataType: 'json',
       contentType: "application/json",
-      success: function(result) {
-        $(link).parents('.recipe_bucket').fadeOut()
+      success: function (result) {
+        $(link).parents('.recipe_bucket').fadeOut('fast', function(){
+          $(link).parents('.recipe_bucket').remove()
+        })
       }
     });
-    console.log('hi')
   })
 </script>

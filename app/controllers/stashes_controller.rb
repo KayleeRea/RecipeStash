@@ -17,7 +17,7 @@ class StashesController < ApplicationController
   end
 
   def destroy
-    @stash = current_user.stashes.find_by_id(params[:id])
+    @stash = current_user.stashes.find_by_yummly_id(params[:id])
     @stash.destroy
     respond_with @stash
   end

@@ -9,7 +9,7 @@ html {
 
 body {
     height: 80%;
-    background-image: url(http://www.splendidtable.org/sites/default/files/AmusementPark.jpg);
+    background-image: url(http://www.housetohomestead.com/wp-content/uploads/2011/01/Fridge1.jpg);
     background-size: 80%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -304,15 +304,6 @@ h2 {
     border-bottom: 1px solid red;
 }
 
-.stash {
-    text-decoration: none;
-    color: black;
-    font-size: 6rem;
-    font-family: 'Architects Daughter', cursive;
-    text-shadow: 0px -2px grey;
-    padding: .2em;
-}
-
 .blue {
     background-color: #1a55e6;
     border-bottom: 5px solid #1a47b1;
@@ -330,3 +321,17 @@ h2 {
 .stash_list {
     list-style-type: none;
 }
+
+.stash {
+    font-size: 10em;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: 'Oswald', sans-serif;
+    background: url(http://www.housetohomestead.com/wp-content/uploads/2011/01/Fridge1.jpg) left center no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+

@@ -1,4 +1,4 @@
-<%= link_to "Back to Search Results", recipes_preview_index_path, class: "back_to_results" %>
+<h4><%= link_to "Back to Search Results", recipes_preview_index_path, class: "back_to_results" %></h4>
 <h1><%= full_recipe.name %></h1>
 <%= image_tag full_recipe.large_photo, class: "large_photo" %>
 <div class="stash_it_button"><%= link_to "Stash It", stashes_path(format: :json), class: "action-button shadow animate red",

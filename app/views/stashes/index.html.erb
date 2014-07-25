@@ -1,14 +1,26 @@
 <%= link_to "New Search", new_recipes_preview_path, class: "action-button shadow animate blue" %>
 
+
 <div class="gray-opaque">
-  
   <div class="wrap">
+
+
     <header>
       <p><%= link_to "The Stash", root_path, class: "stash" %></p>
+      <h3><%= link_to "Back to Search Results", recipes_preview_index_path, class: "back_to_results2" %></h3>
+
     </header>
   </div>
 
   <div class="recipe_bucket">
+    <div id="book">
+      <div id="bookFront"></div>
+      <div id="bookBack"></div>
+      <div id="paper">
+        <div id="lines"></div>
+      </div>
+    </div>
+
     <%= render partial: 'stashes/stash_list', collection: @stashes, as: :stash %>
   </div>
 

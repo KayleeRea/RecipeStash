@@ -333,5 +333,106 @@ h2 {
     -webkit-text-fill-color: transparent;
 }
 
+.back_to_results {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+    float: right;
+}
+
+.back_to_results:hover {
+    border-bottom: 2px solid blue;
+}
+
+.back_to_results2 {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+.back_to_results2:hover {
+    border-bottom: 2px solid blue;
+}
+
+#book{
+    background-color:transparent;
+    height:200px;
+    width: 70%;
+    position:absolute;
+    top:30%;
+    right:40%;
+    margin-top:-100px;
+    margin-left:-100px;
+    float: right;
+    -webkit-transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(50deg);
+}
+
+#bookFront {
+    background: -webkit-linear-gradient(top, red 0, red 10%, #cc0000 100%);
+    /*ff*/
+    background: -moz-linear-gradient(top, red 0, red 10%, #cc0000 100%);
+    width: 85px;
+    height: 118px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-71px;
+    margin-top:-59px;
+    z-index:3;
+    /*chrome saf*/
+    -webkit-border-radius:10px 10px 10px 10px;
+    /*ff*/
+    border-radius:10px 10px 10px 10px;
+    /*chrome saf*/
+    -webkit-transform: rotate(-25deg ) skew(-25deg );
+    /*ff*/
+    transform: rotate(-25deg ) skew(-25deg );
+
+}
+
+#bookBack {
+    background: red;
+    width: 100px;
+    height: 118px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-67px;
+    margin-top:-37px;
+    z-index:1;
+
+    border-radius:10px 10px 10px 10px;
+}
+
+#paper {
+    background: white;
+    width: 90px;
+    height: 105px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-65px;
+    margin-top:-31px;
+    z-index:2;
+    box-shadow: 1px 1px 8px 2px black;
+    border-radius:1px 3px 3px 1px;
+}
+
+#lines {
+    height:100px;
+    width:80px;
+    position:absolute;
+    top:5%;
+    left:5%;
+    z-index:4;
+    background: -webkit-linear-gradient(top, #ccc 0, #ccc 10%, #fff 10%, #fff 20%, #ccc 20%, #ccc 30%, #fff 30%, #fff 40%, #ccc 40%, #ccc 50%, #fff 50%, #fff 60%, #ccc 60%, #ccc 70%, #fff 70%, #fff 80%, #ccc 80%, #ccc 90%, #fff 90%, #fff 100%);
+    background: -moz-linear-gradient(top, #ccc 0, #ccc 10%, #fff 10%, #fff 20%, #ccc 20%, #ccc 30%, #fff 30%, #fff 40%, #ccc 40%, #ccc 50%, #fff 50%, #fff 60%, #ccc 60%, #ccc 70%, #fff 70%, #fff 80%, #ccc 80%, #ccc 90%, #fff 90%, #fff 100%);
+}
+
 
 

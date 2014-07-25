@@ -14,10 +14,17 @@ class RecipesPreviewController < ApplicationController
     end
   end
 
+  alias_method :index, :create
+
   private
 
   def recipe_preview
-    @recipe_preview ||= RecipePreview.new(params[:ingredients])
+    @recipe_preview ||= if params[:ingredients]
+                          session[:last_search] = params[:ingredients]
+                          RecipePreview.new(params[:ingredients])
+                        else
+                          RecipePreview.new(session[:last_search])
+                        end
   end
 
   helper_method :recipe_preview

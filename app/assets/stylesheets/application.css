@@ -326,3 +326,7 @@ h2 {
     border-radius: 1em;
     margin: auto;
 }
+
+.stash_list {
+    list-style-type: none;
+}

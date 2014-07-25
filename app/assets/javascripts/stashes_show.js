@@ -28,7 +28,8 @@ function setupStash(stashes_path){
           name: params.name,
           yummly_id: params.yummlyId,
           photo_url: params.photoUrl,
-          recipe_url: params.recipeUrl
+          recipe_url: params.recipeUrl,
+          ingredients: params.ingredients
         }
       },
       type: 'POST',

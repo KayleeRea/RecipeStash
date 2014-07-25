@@ -24,6 +24,6 @@ class StashesController < ApplicationController
 
   private
   def stash_params
-    params.require(:stash).permit(:name, :yummly_id, :photo_url, :recipe_url)
+    params.require(:stash).permit(:name, :yummly_id, :photo_url, :recipe_url, :ingredients => [])
   end
 end

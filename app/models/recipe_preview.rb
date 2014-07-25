@@ -1,7 +1,7 @@
 class RecipePreview
 
   def initialize(ingredients)
-    @ingredients = ingredients.reject(&:empty?)
+    @ingredients = ingredients.reject(&:empty?).map(&:downcase)
   end
 
   def results

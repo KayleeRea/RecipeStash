@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721210052) do
+ActiveRecord::Schema.define(version: 20140725140721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140721210052) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "recipe_url"
+    t.text     "ingredients"
   end
 
   add_index "stashes", ["user_id"], name: "index_stashes_on_user_id", using: :btree

@@ -139,7 +139,7 @@ span {
     font-weight: 100;
     color: #111;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-top: 3em;
+    margin-top: 2.7em;
     text-transform: uppercase;
 }
 
@@ -151,6 +151,10 @@ span {
 
 .search {
     padding-left: 3em;
+}
+
+form {
+    margin-left: 3em;
 }
 
 .forms {
@@ -353,6 +357,7 @@ h2 {
     font-weight: bold;
     color: blue;
     float: right;
+    margin-right: 11em;
 }
 
 .back_to_results:hover {

@@ -1,5 +1,5 @@
 <ul>
-  <li><h2><%= recipe.name %></h2>
+  <li><h3><%= recipe.name %></h3>
     <br><%= image_tag recipe.image_url %><%= link_to "See Full Recipe", full_recipe_path(recipe.recipe_id), class: "action-button shadow animate red" %>
     <ul>
       <% recipe.ingredients.each do |ingredient| %>

@@ -1,5 +1,5 @@
-function setupStash(stashes_path){
-  $.getJSON(stashes_path, function(data) {
+function setupStash(stashes_path) {
+  $.getJSON(stashes_path, function (data) {
     if (data.stash) {
       $('.trash_it_button').show();
     } else {
@@ -7,18 +7,21 @@ function setupStash(stashes_path){
     }
   });
 
-  $('.trash_it_button a').on('click', function(event) {
+  $('.trash_it_button a').on('click', function (event) {
     event.preventDefault();
     $.ajax(event.target.href, {
       dataType: 'json',
       type: 'DELETE',
-      success: function(data) {
+      success: function (data) {
+        if (data.count === 0) {
+          $('.stash_link a').hide();
+        }
         $('.trash_it_button').hide();
         $('.stash_it_button').show();
       }
     });
   });
-  $('.stash_it_button a').on('click', function(event) {
+  $('.stash_it_button a').on('click', function (event) {
     event.preventDefault();
     var params = $(this).data();
     $.ajax(event.target.href, {
@@ -33,7 +36,8 @@ function setupStash(stashes_path){
         }
       },
       type: 'POST',
-      success: function(data) {
+      success: function (data) {
+        $('.stash_link a').show();
         $('.stash_it_button').hide();
         $('.trash_it_button').show();
       }

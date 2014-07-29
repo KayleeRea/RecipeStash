@@ -8,18 +8,22 @@ class StashesController < ApplicationController
 
   def show
     @stash = current_user.stashes.find_by_yummly_id(params[:id])
-    respond_with({stash: @stash})
+    respond_with stash: @stash
   end
 
   def create
     @stash = current_user.stashes.create(stash_params)
-    respond_with @stash
+    render json: {
+      stash: @stash, count: current_user.stashes.count
+    }
   end
 
   def destroy
     @stash = current_user.stashes.find_by_yummly_id(params[:id])
     @stash.destroy
-    respond_with @stash
+    render json: {
+      stash: @stash, count: current_user.stashes.count
+    }, status: :ok
   end
 
   private

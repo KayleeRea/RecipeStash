@@ -90,13 +90,12 @@ h4 {
 }
 
 .logo {
-    width: 40em;
+    width: 16.7em;
     margin: auto;
     float: left;
     display: inline-block;
     border: none;
     height: 10em;
-    width: 20em;
     margin-left: 4em;
 
 }

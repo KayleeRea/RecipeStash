@@ -1,7 +1,6 @@
 <div class="recipe_bucket">
 <h2><%= stash.name %></h2>
-
-<div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, class: "btn2", target: :_blank %></div>
+<div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, method: :get, class: "btn2", target: :_blank %></div>
 
 <div><%= image_tag stash.photo_url %></div>
     <ul>

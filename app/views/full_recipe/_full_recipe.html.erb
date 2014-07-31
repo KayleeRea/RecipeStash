@@ -7,6 +7,7 @@
                                                 ingredients: full_recipe.ingredient_quantities} %>
 </div>
 <div class="trash_it_button"><%= link_to "Trash It", stash_path(params[:id], format: :json), class: "action-button shadow animate orange-trash" %></div>
+<div class="recipe-contents-container">
 <% if full_recipe.yielding.nil? %>
 <% else %>
   <h5>Yields: <%= full_recipe.yielding %> <br>Rating: <%= full_recipe.rating %> </h5>
@@ -18,7 +19,7 @@
   <% end %>
 </ul>
 <%= link_to "Visit the source of this full_recipe", full_recipe.recipe_url, class: "action-button shadow animate orange", target: :_blank %>
-
+</div>
 
 <script>
   $(function () {

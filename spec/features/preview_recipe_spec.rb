@@ -114,12 +114,6 @@ feature 'User can do a search and will recieve a list of preview recipes' do
     click_on 'See Full Recipe'
 
     expect(page).to have_content("Quick Weeknight Tomato Sauce with Pasta")
-
-    #testing session[:last_search]
-    click_on "See my Stash"
-
-    visit '/recipes_preview'
-    expect(page).to have_content("Quick Weeknight Tomato Sauce with Pasta")
   end
 end
 

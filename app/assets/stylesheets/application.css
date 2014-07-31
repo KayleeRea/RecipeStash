@@ -253,6 +253,7 @@ form {
     -ms-transition: 0.7s;
     -o-transition: 0.7s;
     transition: 0.7s;
+    margin-right: 3em;
 }
 
 .btn2:hover {
@@ -341,7 +342,7 @@ h2 {
 }
 
 .stash {
-    font-size: 10em;
+    font-size: 9em;
     text-transform: uppercase;
     font-weight: bolder;
     font-family: 'Oswald', sans-serif;

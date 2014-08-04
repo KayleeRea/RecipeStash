@@ -1,6 +1,9 @@
 <h4><%= link_to "Back to Search Results", recipes_preview_index_path, class: "back_to_results" %></h4>
 <h1><%= full_recipe.name %></h1>
-<%= image_tag full_recipe.large_photo, class: "large_photo" %>
+<% if full_recipe.large_photo.nil? %>
+  <%= image_tag full_recipe.large_photo, class: "large_photo" %>
+<% end %>
+
 <div class="stash_it_button"><%= link_to "Stash It", stashes_path(format: :json), class: "action-button shadow animate red",
                                          data: {name: full_recipe.name, yummly_id: params[:id],
                                                 photo_url: full_recipe.small_photo, full_recipe_url: full_recipe.recipe_url,
@@ -8,17 +11,16 @@
 </div>
 <div class="trash_it_button"><%= link_to "Trash It", stash_path(params[:id], format: :json), class: "action-button shadow animate orange-trash" %></div>
 <div class="recipe-contents-container">
-<% if full_recipe.yielding.nil? %>
-<% else %>
-  <h5>Yields: <%= full_recipe.yielding %> <br>Rating: <%= full_recipe.rating %> </h5>
-<% end %>
-<ul>
-  <h4>Ingredients</h4>
-  <% full_recipe.ingredient_quantities.each do |ingredient| %>
-    <li><%= ingredient %></li>
+  <% if full_recipe.yielding.present? %>
+    <h5>Yields: <%= full_recipe.yielding %> <br>Rating: <%= full_recipe.rating %> </h5>
   <% end %>
-</ul>
-<%= link_to "Visit the source of this full_recipe", full_recipe.recipe_url, class: "action-button shadow animate orange", target: :_blank %>
+  <ul>
+    <h4>Ingredients</h4>
+    <% full_recipe.ingredient_quantities.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Visit the source of this full_recipe", full_recipe.recipe_url, class: "action-button shadow animate orange", target: :_blank %>
 </div>
 
 <script>

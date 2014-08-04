@@ -1,12 +1,17 @@
 <div class="recipe_bucket">
-<h2><%= stash.name %></h2>
-<div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, method: :get, class: "btn2", target: :_blank %></div>
+  <h2><%= stash.name %></h2>
 
-<div><%= image_tag stash.photo_url %></div>
-    <ul>
-      <% stash.ingredients.each do |ingredient| %>
-        <li class="stash_list"><%= ingredient %></li>
-      <% end %>
-    </ul>
-<strong><%= link_to "Trash It", stash_path(stash.yummly_id), class: "remove" %></strong></br>
+  <div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, method: :get, class: "btn2", target: :_blank %></div>
+
+  <div>
+    <% if stash.photo_url.nil? %>
+      <%= image_tag stash.photo_url %>
+    <% end %>
+  </div>
+  <ul>
+    <% stash.ingredients.each do |ingredient| %>
+      <li class="stash_list"><%= ingredient %></li>
+    <% end %>
+  </ul>
+  <strong><%= link_to "Trash It", stash_path(stash.yummly_id), class: "remove" %></strong></br>
 </div>

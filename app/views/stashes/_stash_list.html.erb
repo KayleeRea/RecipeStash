@@ -4,7 +4,7 @@
   <div class="buttons1"><%= button_to "Visit this recipe", stash.recipe_url, method: :get, class: "btn2", target: :_blank %></div>
 
   <div>
-    <% if stash.photo_url.nil? %>
+    <% unless stash.photo_url.match(/\b(null)\b/i) %>
       <%= image_tag stash.photo_url %>
     <% end %>
   </div>

@@ -237,8 +237,8 @@ form {
 }
 
 .btn2 {
-
-    height: 3em;
+    display: inline-block;
+    padding: .6em;
     border: 3px solid limegreen;
     background-color: rgba(241, 239, 236, 0.67);
     font-size: 17px;
@@ -253,7 +253,6 @@ form {
     -ms-transition: 0.7s;
     -o-transition: 0.7s;
     transition: 0.7s;
-    margin-right: 3em;
 }
 
 .btn2:hover {

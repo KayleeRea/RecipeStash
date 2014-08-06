@@ -9,7 +9,10 @@ function removeStash() {
       contentType: "application/json",
       success: function (result) {
         $(link).parents('.recipe_bucket').fadeOut('fast', function () {
-          $(link).parents('.recipe_bucket').remove()
+          $(link).parents('.recipe_bucket').remove();
+          if ($('.recipe_bucket').length === 0) {
+            $('.stash_link a').hide();
+          }
         })
       }
     });

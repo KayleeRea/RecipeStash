@@ -1,4 +1,7 @@
 class StashesController < ApplicationController
+
+  before_action :ensure_current_user
+
   respond_to :html, :json
 
   def index

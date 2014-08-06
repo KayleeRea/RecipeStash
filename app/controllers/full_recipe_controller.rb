@@ -1,4 +1,7 @@
 class FullRecipeController < ApplicationController
+
+  before_action :ensure_current_user
+
   def show
     @id = params[:id]
   end

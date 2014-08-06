@@ -1,4 +1,7 @@
 class RecipesPreviewController < ApplicationController
+
+  before_action :ensure_current_user
+
   def index
   end
 

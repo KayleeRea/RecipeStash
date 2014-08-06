@@ -14,7 +14,7 @@ class FullRecipe
     json_data = JSON.parse(response.body)
     large_photo = json_data["images"].map { |images| images["imageUrlsBySize"]["360"] }.first
     small_photo = json_data["images"].map { |images| images["imageUrlsBySize"]["90"] }.first
-    ingredient_quantities = json_data["ingredientLines"]
+    ingredient_quantities = json_data["ingredientLines"].uniq
     rating = json_data["rating"]
     name = json_data["name"]
     yielding = json_data["yield"]
